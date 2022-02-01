@@ -4,9 +4,16 @@ public class Nota {
 	private Evaluacion eval;
 	private Alumno alum;
 
-	public Nota(double calificacion, Evaluacion eval, Alumno alum) {
+	public Nota(Evaluacion eval, Alumno alum, double calificacion) {
 
 		this.calificacion = calificacion;
+		this.eval = eval;
+		this.alum = alum;
+	}
+
+	public Nota(Evaluacion eval, Alumno alum) {
+
+		this.calificacion = (Double) null;// sin clasificar
 		this.eval = eval;
 		this.alum = alum;
 	}
@@ -16,7 +23,11 @@ public class Nota {
 	}
 
 	public double getCalificacion() {
-		return calificacion;
+		return this.calificacion;
 	}
-	
+
+	/*public void addNota(Evaluacion eval, Alumno alumno, double nota) {
+		if
+	}*/
+
 }
