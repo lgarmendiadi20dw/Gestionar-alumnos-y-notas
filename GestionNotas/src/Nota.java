@@ -25,5 +25,13 @@ public class Nota {
 		return alum;
 	}
 
+	public Asignatura getAsignatura() {
+		return asignatura;
+	}
+
+	public int getNumeroEval() {
+		return NumeroEval;
+	}
+
 
 }

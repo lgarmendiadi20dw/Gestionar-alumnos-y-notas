@@ -5,9 +5,9 @@ public class Asignatura {
 	private int idAsignatura;
 	private String nombreAsig;
 	private int nAsig = 0;
-	private Nota[] eval1= new Nota[grupo.getCantidadAlumnos()];
-	private Nota[] eval2= new Nota[grupo.getCantidadAlumnos()];
-	private Nota[] eval3= new Nota[grupo.getCantidadAlumnos()];
+	private Nota[] eval1;
+	private Nota[] eval2;
+	private Nota[] eval3;
 
 	public Asignatura(Grupo grupo, int idAsignatura, String nombreAsig) {
 		this.grupo = grupo;
@@ -15,6 +15,9 @@ public class Asignatura {
 		this.nombreAsig = nombreAsig.toUpperCase();
 		this.nAsig++;
 		grupo.addAsignatura(this);
+		eval1= new Nota[this.grupo.getCantidadAlumnos()];
+		eval2= new Nota[this.grupo.getCantidadAlumnos()];
+		eval3= new Nota[this.grupo.getCantidadAlumnos()];
 	}
 
 	public String getNombreAsig() {
