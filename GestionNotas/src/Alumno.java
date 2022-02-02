@@ -25,7 +25,7 @@ public class Alumno {
 		return this.grupo;
 	}
 
-	public void AñadirNotaAlumno(Asignatura asig, int evalNumber, Integer calificacion) {
+	public void agregarNotaAlumno(Asignatura asig, int evalNumber, Integer calificacion) {
 		Nota nota = new Nota(this, asig, evalNumber, calificacion);
 		this.addNota(nota);
 		asig.addNota(nota, evalNumber);
