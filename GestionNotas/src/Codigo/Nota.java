@@ -13,9 +13,6 @@ public class Nota {
 		this.NumeroEval = eval;
 	}
 
-	public void setCalificacion(Integer nota) {
-		this.calificacion = nota;
-	}
 
 	public Integer getCalificacion() {
 		return this.calificacion;
