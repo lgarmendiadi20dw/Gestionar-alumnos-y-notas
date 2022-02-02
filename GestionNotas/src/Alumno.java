@@ -25,7 +25,7 @@ public class Alumno {
 		return this.grupo;
 	}
 
-	public void crearNota(Asignatura asig, int evalNumber, Integer calificacion) {
+	public void AñadirNotaAlumno(Asignatura asig, int evalNumber, Integer calificacion) {
 		Nota nota = new Nota(this, asig, evalNumber, calificacion);
 		this.addNota(nota);
 		asig.addNota(nota, evalNumber);
@@ -43,9 +43,28 @@ public class Alumno {
 	}
 
 	public void mostrarNotasAlumno() {
-		System.out.println("ASIGNATURAS"+"\t\t"+"NOTA");
-		for (int i = 0; i < notas.length; i++) {
-			System.out.println(this.notas[i].getAsignatura()+"\t\t"+this.notas[i].getCalificacion());
+		System.out.println("PRIMERA EVALUACION");
+		System.out.println("EVALUACION\t\t\tASIGNATURAS\t\t\tNOTA");
+		for (int i = 0; i < this.notas.length; i++) {
+			if(this.notas[i].getNumeroEval()==1) {
+			System.out.println(this.notas[i].getNumeroEval()+"\t\t\t"+notas[i].getAsignatura()+"\t\t"+this.notas[i].getCalificacion());
+			}
+		}
+
+		System.out.println("SEGUNDA EVALUACION");
+		System.out.println("EVALUACION\t\t\tASIGNATURAS\t\t\tNOTA");
+		for (int i = 0; i < this.notas.length; i++) {
+			if(this.notas[i].getNumeroEval()==2) {
+			System.out.println(this.notas[i].getNumeroEval()+"\t\t\t"+notas[i].getAsignatura()+"\t\t"+this.notas[i].getCalificacion());
+			}
+		}
+
+		System.out.println("TERCERA EVALUACION");
+		System.out.println("EVALUACION\t\t\tASIGNATURAS\t\t\tNOTA");
+		for (int i = 0; i < this.notas.length; i++) {
+			if(this.notas[i].getNumeroEval()==3) {
+			System.out.println(this.notas[i].getNumeroEval()+"\t\t\t"+notas[i].getAsignatura()+"\t\t"+this.notas[i].getCalificacion());
+			}
 		}
 	}
 
