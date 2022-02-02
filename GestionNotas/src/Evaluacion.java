@@ -1,7 +1,8 @@
 
+
 public class Evaluacion {
 	public int numEval;//1,2,3 ; damos por hecho que el usuario introducira uno de esos numeros
-	public Asignatura[] asig;
+	public Asignatura asig;
 	public Nota[] notas;
 	public Evaluacion(int numEval, Asignatura[] asig, Nota[] notas) {
 		this.numEval = numEval;
@@ -22,5 +23,6 @@ public class Evaluacion {
 	public Asignatura[] getAsig() {
 		return asig;
 	}
+	
 	
 }

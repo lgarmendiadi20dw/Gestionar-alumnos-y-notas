@@ -1,33 +1,29 @@
 
+
 public class Nota {
-	private double calificacion;// nota
-	private Evaluacion eval;
+	private Integer calificacion;// las notas están redondeadas
+	private Asignatura asignatura;
+	private int NumeroEval; //1-3
 	private Alumno alum;
 
-	public Nota(Evaluacion eval, Alumno alum, double calificacion) {
-
+	public Nota(Alumno alum, Asignatura asignatura , Integer calificacion, int eval) {
+		this.alum = alum;
+		this.asignatura = asignatura;
 		this.calificacion = calificacion;
-		this.eval = eval;
-		this.alum = alum;
+		this.NumeroEval= eval;
 	}
-
-	public Nota(Evaluacion eval, Alumno alum) {
-
-		this.calificacion = (Double) null;// sin clasificar
-		this.eval = eval;
-		this.alum = alum;
-	}
-
-	public void setCalificacion(double nota) {
+	
+	public void setCalificacion(Integer nota) {
 		this.calificacion = nota;
 	}
 
-	public double getCalificacion() {
+	public Integer getCalificacion() {
 		return this.calificacion;
 	}
 
-	/*public void addNota(Evaluacion eval, Alumno alumno, double nota) {
-		if
-	}*/
+	public Alumno getAlum() {
+		return alum;
+	}
+
 
 }
