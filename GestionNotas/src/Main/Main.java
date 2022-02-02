@@ -1,3 +1,9 @@
+package Main;
+import Codigo.Alumno;
+import Codigo.Asignatura;
+import Codigo.Ciclo;
+import Codigo.Console;
+import Codigo.Grupo;
 
 public class Main {
 	public static Integer notaValida() {
@@ -32,7 +38,7 @@ public class Main {
 			System.out.println("1. Ver notas alumno");
 			System.out.println("2. Ver Notas asignatura");
 			System.out.println("3. Añadir nota a alumno");
-			System.out.println("AVISO: Si intoduces una opción no valida la ejecucion de la aplicacion finalizara");
+			System.out.println("4. Salir");
 			opcion = Console.readInt();
 			switch (opcion) {
 			case 1:
@@ -50,6 +56,7 @@ public class Main {
 					a3.mostrarNotasAlumno();
 					break;
 				}
+				break;
 			case 2:
 				System.out.println(g1.listaAsignaturas());
 				System.out.println("Elige una asignatura por su id");
@@ -70,6 +77,7 @@ public class Main {
 						asig3.mostrarTodasNotas();
 						break;
 					}
+					break;
 				case 2:
 					System.out.println("Elige entre la 1º, 2º y 3º evaluacion");
 					int opcionEval = Console.readInt();
@@ -84,75 +92,72 @@ public class Main {
 						asig3.mostrarNotasEval(opcionEval);
 						break;
 					}
-				case 3:
-					System.out.println(g1.listaAlumnos());
 
-					System.out.println("Elige un alumno por su id");
-					int eleccionAlumno = Console.readInt();
-					System.out.println(g1.listaAsignaturas());
-					System.out.println("Elige la asinatura a calificar por su id");
-					int eleccionAsig = Console.readInt();
-					System.out.println("Elige la evaluacion a calificar: 1, 2, 3");
-					int eleccionEval = Console.readInt();
-					System.out.println("Introduce la nota (numeros naturales del 0 al 10):");
+				}
+				break;
+			case 3:
+				System.out.println(g1.listaAlumnos());
 
-					Integer notaIntro = notaValida();
+				System.out.println("Elige un alumno por su id");
+				int eleccionAlumno = Console.readInt();
+				System.out.println(g1.listaAsignaturas());
+				System.out.println("Elige la asinatura a calificar por su id");
+				int eleccionAsig = Console.readInt();
+				System.out.println("Elige la evaluacion a calificar: 1, 2, 3");
+				int eleccionEval = Console.readInt();
+				System.out.println("Introduce la nota (numeros naturales del 0 al 10):");
 
-					switch (eleccionAlumno) {
+				Integer notaIntro = notaValida();
+
+				switch (eleccionAlumno) {
+				case 1:
+					switch (eleccionAsig) {
 					case 1:
-						switch (eleccionAsig) {
-						case 1:
-							a1.agregarNotaAlumno(asig1, eleccionEval, notaIntro);
-							break;
-						case 2:
-							a1.agregarNotaAlumno(asig2, eleccionEval, notaIntro);
-							break;
-						case 3:
-							a1.agregarNotaAlumno(asig3, eleccionEval, notaIntro);
-							break;
-
-						default:
-							break;
-						}
-
+						a1.agregarNotaAlumno(asig1, eleccionEval, notaIntro);
 						break;
 					case 2:
-						switch (eleccionAsig) {
-						case 1:
-							a2.agregarNotaAlumno(asig1, eleccionEval, notaIntro);
-							break;
-						case 2:
-							a2.agregarNotaAlumno(asig2, eleccionEval, notaIntro);
-							break;
-						case 3:
-							a2.agregarNotaAlumno(asig3, eleccionEval, notaIntro);
-							break;
-
-						default:
-							break;
-						}
+						a1.agregarNotaAlumno(asig2, eleccionEval, notaIntro);
 						break;
 					case 3:
-						switch (eleccionAsig) {
-						case 1:
-							a3.agregarNotaAlumno(asig1, eleccionEval, notaIntro);
-							break;
-						case 2:
-							a3.agregarNotaAlumno(asig2, eleccionEval, notaIntro);
-							break;
-						case 3:
-							a3.agregarNotaAlumno(asig3, eleccionEval, notaIntro);
-							break;
-
-						default:
-							break;
-						}
+						a1.agregarNotaAlumno(asig3, eleccionEval, notaIntro);
 						break;
+
 					}
+
+					break;
+				case 2:
+					switch (eleccionAsig) {
+					case 1:
+						a2.agregarNotaAlumno(asig1, eleccionEval, notaIntro);
+						break;
+					case 2:
+						a2.agregarNotaAlumno(asig2, eleccionEval, notaIntro);
+						break;
+					case 3:
+						a2.agregarNotaAlumno(asig3, eleccionEval, notaIntro);
+						break;
+
+					}
+					break;
+				case 3:
+					switch (eleccionAsig) {
+					case 1:
+						a3.agregarNotaAlumno(asig1, eleccionEval, notaIntro);
+						break;
+					case 2:
+						a3.agregarNotaAlumno(asig2, eleccionEval, notaIntro);
+						break;
+					case 3:
+						a3.agregarNotaAlumno(asig3, eleccionEval, notaIntro);
+						break;
+
+					}
+					break;
+
+				case 4:
+					terminar = true;
+					break;
 				}
-			default:
-				terminar = true;
-				break;
 			}
 
 		} while (!terminar);
@@ -160,6 +165,8 @@ public class Main {
 
 	public static void main(String[] args) {
 		menu();
+		
+
 	}
 
 }

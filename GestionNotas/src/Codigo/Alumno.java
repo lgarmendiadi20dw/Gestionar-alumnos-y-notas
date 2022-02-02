@@ -1,3 +1,4 @@
+package Codigo;
 
 public class Alumno {
 	private int idAlumno;
@@ -25,18 +26,22 @@ public class Alumno {
 		return this.grupo;
 	}
 
+	public Nota[] getNotas() {
+		return notas;
+	}
+
 	public void agregarNotaAlumno(Asignatura asig, int evalNumber, Integer calificacion) {
-		Nota nota = new Nota(this, asig, evalNumber, calificacion);
+		Nota nota = new Nota(this, asig, calificacion, evalNumber);
 		this.addNota(nota);
-		asig.addNota(nota, evalNumber);
+		asig.addNota(nota);
 	}
 
 	public void addNota(Nota nota) {
 		int i = 0;
 		boolean añadido = false;
-		while (i < notas.length && !añadido) {
-			if (notas[i] == null) {
-				notas[i] = nota;
+		while (i < this.notas.length && !añadido) {
+			if (this.notas[i] == null) {
+				this.notas[i] = nota;
 				añadido = true;
 			}
 		}
@@ -44,27 +49,38 @@ public class Alumno {
 
 	public void mostrarNotasAlumno() {
 		System.out.println("PRIMERA EVALUACION");
-		System.out.println("EVALUACION\t\t\tASIGNATURAS\t\t\tNOTA");
+		System.out.println("ASIGNATURAS\t\tNOTA");
 		for (int i = 0; i < this.notas.length; i++) {
-			if(this.notas[i].getNumeroEval()==1) {
-			System.out.println(this.notas[i].getNumeroEval()+"\t\t\t"+notas[i].getAsignatura()+"\t\t"+this.notas[i].getCalificacion());
+			if (this.notas[i] != null) {
+				if (this.notas[i].getNumeroEval() == 1) {
+					System.out.println(
+							this.notas[i].getAsignatura().getNombreAsig() + "\t\t\t" + this.notas[i].getCalificacion());
+				}
 			}
 		}
-
+		System.out.println();
 		System.out.println("SEGUNDA EVALUACION");
-		System.out.println("EVALUACION\t\t\tASIGNATURAS\t\t\tNOTA");
+		System.out.println("ASIGNATURAS\t\t\tNOTA");
 		for (int i = 0; i < this.notas.length; i++) {
-			if(this.notas[i].getNumeroEval()==2) {
-			System.out.println(this.notas[i].getNumeroEval()+"\t\t\t"+notas[i].getAsignatura()+"\t\t"+this.notas[i].getCalificacion());
+			if (this.notas[i] != null) {
+				if (this.notas[i].getNumeroEval() == 2) {
+					System.out.println(this.notas[i].getAsignatura() + "\t\t" + this.notas[i].getCalificacion());
+				}
 			}
+
 		}
 
+		System.out.println();
 		System.out.println("TERCERA EVALUACION");
-		System.out.println("EVALUACION\t\t\tASIGNATURAS\t\t\tNOTA");
+		System.out.println("ASIGNATURAS\t\t\tNOTA");
 		for (int i = 0; i < this.notas.length; i++) {
-			if(this.notas[i].getNumeroEval()==3) {
-			System.out.println(this.notas[i].getNumeroEval()+"\t\t\t"+notas[i].getAsignatura()+"\t\t"+this.notas[i].getCalificacion());
+			if (this.notas[i] != null) {
+				if (this.notas[i].getNumeroEval() == 3) {
+					System.out.println(this.notas[i].getAsignatura() + "\t\t" + this.notas[i].getCalificacion());
+				}
 			}
+			System.out.println();
+
 		}
 	}
 

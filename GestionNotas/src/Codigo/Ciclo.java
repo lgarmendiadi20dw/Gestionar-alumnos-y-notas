@@ -1,4 +1,4 @@
-
+package Codigo;
 
 public class Ciclo {
 	private int idCiclo;
@@ -10,9 +10,7 @@ public class Ciclo {
 	}
 
 	public String toString() {
-		return "Ciclo: " + this.nombreCiclo+"\nId del ciclo: "+this.idCiclo;
+		return "Ciclo: " + this.nombreCiclo + "\nId del ciclo: " + this.idCiclo;
 	}
-
-	
 
 }

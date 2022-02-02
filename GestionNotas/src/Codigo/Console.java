@@ -1,3 +1,4 @@
+package Codigo;
 //Console class for new jdk's
 
 import java.io.BufferedInputStream;

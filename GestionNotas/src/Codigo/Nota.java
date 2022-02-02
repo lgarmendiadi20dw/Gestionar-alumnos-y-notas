@@ -1,18 +1,18 @@
-
+package Codigo;
 
 public class Nota {
 	private Integer calificacion;// las notas están redondeadas
 	private Asignatura asignatura;
-	private int NumeroEval; //1-3
+	private int NumeroEval; // 1-3
 	private Alumno alum;
 
-	public Nota(Alumno alum, Asignatura asignatura , Integer calificacion, int eval) {
+	public Nota(Alumno alum, Asignatura asignatura, Integer calificacion, int eval) {
 		this.alum = alum;
 		this.asignatura = asignatura;
 		this.calificacion = calificacion;
-		this.NumeroEval= eval;
+		this.NumeroEval = eval;
 	}
-	
+
 	public void setCalificacion(Integer nota) {
 		this.calificacion = nota;
 	}
@@ -32,6 +32,5 @@ public class Nota {
 	public int getNumeroEval() {
 		return NumeroEval;
 	}
-
 
 }

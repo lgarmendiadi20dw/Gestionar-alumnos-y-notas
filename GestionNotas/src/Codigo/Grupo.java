@@ -1,3 +1,4 @@
+package Codigo;
 
 import java.util.Arrays;
 
@@ -5,8 +6,8 @@ public class Grupo {
 	private int idGrupo;
 	private String nombreGrupo;
 	private Ciclo ciclo;
-	private Asignatura[] asig=new Asignatura[0];
-	private Alumno[] alumns=new Alumno[0];
+	private Asignatura[] asig = new Asignatura[1];
+	private Alumno[] alumns = new Alumno[1];
 
 	public Grupo(int idGrupo, String nombreGrupo, Ciclo ciclo) {
 		this.idGrupo = idGrupo;
@@ -42,15 +43,16 @@ public class Grupo {
 		}
 		return newArr;
 	}
+
 	public void addAsignatura(Asignatura asignatura) {
-		this.asig=increaseAsig(this.asig);
+		this.asig = increaseAsig(this.asig);
 		for (int i = 0; i < this.asig.length; i++) {
-			if(this.asig[i]==null) {
-				this.asig[i]=asignatura;
+			if (this.asig[i] == null) {
+				this.asig[i] = asignatura;
 			}
 		}
 	}
-	
+
 	public Alumno[] increaseAlumn(Alumno[] alums) {
 		Alumno[] newArr = new Alumno[alumns.length + 1];
 		for (int i = 0; i < alumns.length; i++) {
@@ -58,11 +60,12 @@ public class Grupo {
 		}
 		return newArr;
 	}
+
 	public void addAlumn(Alumno alumn) {
-		this.alumns=increaseAlumn(this.alumns);
+		this.alumns = increaseAlumn(this.alumns);
 		for (int i = 0; i < this.alumns.length; i++) {
-			if(this.alumns[i]==null) {
-				this.alumns[i]=alumn;
+			if (this.alumns[i] == null) {
+				this.alumns[i] = alumn;
 			}
 		}
 	}
@@ -78,14 +81,14 @@ public class Grupo {
 	public String listaAlumnos() {
 		String lista = "NOMBRE\tID\n";
 		for (int i = 0; i < this.asig.length; i++) {
-			lista += this.alumns[i].getNombreAlumno() + "\t"+ this.alumns[i].getIdAlumno()+"\n";
+			lista += this.alumns[i].getNombreAlumno() + "\t" + this.alumns[i].getIdAlumno() + "\n";
 		}
 		return lista;
 	}
 
 	public String toString() {
-		return "Grupo: " + nombreGrupo + " que pertenece a " + this.ciclo.toString()
-				+ "Lista de asignaturas: \n" + listaAsignaturas() + "Lista de Alumnos:\n" +listaAlumnos();
+		return "Grupo: " + nombreGrupo + " que pertenece a " + this.ciclo.toString() + "Lista de asignaturas: \n"
+				+ listaAsignaturas() + "Lista de Alumnos:\n" + listaAlumnos();
 	}
 
 }
