@@ -95,6 +95,16 @@ public class Asignatura {
 			System.out
 					.println(this.eval1[j].getAlum().getNombreAlumno() + "\t\t\t" + this.eval1[j].getNumeroEval());
 		}
+		System.out.println("SEGUNDA EVALUACION");
+		for (int j = 0; j < this.eval2.length; j++) {
+			System.out
+					.println(this.eval2[j].getAlum().getNombreAlumno() + "\t\t\t" + this.eval2[j].getNumeroEval());
+		}
+		System.out.println("TERCERA EVALUACION");
+		for (int j = 0; j < this.eval3.length; j++) {
+			System.out
+					.println(this.eval3[j].getAlum().getNombreAlumno() + "\t\t\t" + this.eval3[j].getNumeroEval());
+		}
 	}
 
 }
