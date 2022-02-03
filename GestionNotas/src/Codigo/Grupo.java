@@ -6,8 +6,8 @@ public class Grupo {
 	private int idGrupo;
 	private String nombreGrupo;
 	private Ciclo ciclo;
-	private Asignatura[] asig = new Asignatura[1];
-	private Alumno[] alumns = new Alumno[1];
+	private Asignatura[] asig = new Asignatura[0];
+	private Alumno[] alumns = new Alumno[0];
 
 	public Grupo(int idGrupo, String nombreGrupo, Ciclo ciclo) {
 		this.idGrupo = idGrupo;
@@ -32,7 +32,7 @@ public class Grupo {
 	}
 
 	public String getNombreGrupo() {
-		return nombreGrupo;
+		return this.nombreGrupo;
 	}
 
 	// MIRAR!!
